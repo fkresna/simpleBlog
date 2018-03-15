@@ -21,11 +21,15 @@
 
       <div class="collapse navbar-collapse" id="navbars">
         <ul class="navbar-nav mr-auto">
+        @guest
+          <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+        @else
           <li class="nav-item">
-            <a class="nav-link" href="signup">Sign Up</a>
+            <a class="nav-link" href="signup">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="signin">Sign In</a>
+            <a class="nav-link" href="signin">Register</a>
           </li>
         </ul>
       </div>
