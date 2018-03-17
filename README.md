@@ -6,7 +6,7 @@ Running Application can be seen on [http://simpleblog.kresna.xyz](http://simpleb
 ## Features
 * User Registration System
 
-  Log in, Log out, Registration, and Auth class utilization.  
+  Log in, Log out, Registration, Forgot Password, and Auth class utilization.  
 
 * Post Management
 
