@@ -57,4 +57,38 @@ class PostController extends Controller
 
     	return redirect('/');
     }
+
+    public function lists() {
+        $posts = Post::orderBy('created_at','desc')->get();
+        return view('posts.postList',compact('posts'));
+    }
+
+    public function edit($id) {
+        $post = Post::find($id);
+        return view('posts.edit',compact('post'));
+    }
+
+    public function update($id) {
+        $this->validate(request(), [
+            'title' => 'required',
+            'content' => 'required'
+        ]);
+
+        $message = "";
+        $post = Post::find($id);
+        $post->title = request('title');
+        $post->content = request('content');
+        if ($post->save()){
+            $message = "The post has been successfully updated";
+        } else {
+            $message = "The update is fail";
+        }
+
+        $data = array(
+            'message' => $message,
+            'post' => $post
+        );
+
+        return view('posts.show',$data);
+    }
 }

@@ -34,6 +34,10 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                        @if(!Auth::guest())
+
+                            <li><a class="nav-link" href="/posts">Posts</a></li>
+                        @endif
 
                     </ul>
 

@@ -24,3 +24,12 @@ Route::post('/posts','PostController@store');
 Route::get('posts/{post}','PostController@show');
 
 Route::get('posts/user/{userid}','PostController@showUser');
+
+Route::get('/posts','PostController@lists');
+
+Route::get('/posts/{post}/edit','PostController@edit');
+
+Route::get('/posts/{post}/delete','PostController@destroy');
+
+Route::put('/posts/{post}','PostController@update');
+

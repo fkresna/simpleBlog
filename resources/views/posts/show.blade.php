@@ -2,6 +2,11 @@
 
 @section('content')
 <div class="container">
+    @if(isset($message))
+	    <div class="row alert alert-info" role="alert">
+	        {{ $message }}
+	    </div>
+    @endif
     <div class="row">
     	<h1>{{ $post->title }}</h1>
     </div>
