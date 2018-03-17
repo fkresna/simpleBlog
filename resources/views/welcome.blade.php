@@ -5,12 +5,18 @@
     <div class="row">
         <h1>Article List</h1>
     </div>
-    @foreach ($posts as @post)
+    @if (count($posts))
+    @foreach ($posts as $post)
         <div class="row">
-            <h2>{{ $post->title }}</h2>
+            <h2><a href="/posts/{{ $post->id }}">{{ $post->title }}</a> </h2>
+        </div>
+        <div class="row">
+            <p><small class="text-muted"> {{ $post->created_at->toFormattedDateString() }} by {{ $post->user->name }}</small></p>
+            
             <p>{{ $post->content }}</p>
         </div>
     @endforeach
+    @endif
     
 </div>
 @endsection
