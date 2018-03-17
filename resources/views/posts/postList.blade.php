@@ -13,7 +13,7 @@
         </div>
         <div class="row">
             <p>
-            <a href="/posts/{{$post->id }}/edit">Edit</a> <a href="/posts/{{$post->id }}/delete">Delete</a>
+            <a href="/posts/{{$post->id }}/edit">Edit</a> <a href="/posts/{{$post->id }}/delete" onclick="return confirm('Are you sure?')">Delete</a>
             </p>
         </div>
     @endforeach
