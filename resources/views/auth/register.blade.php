@@ -61,6 +61,20 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="best_traits" class="col-md-4 col-form-label text-md-right">{{ __('What is your best traits?') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="best_traits" type="text" class="form-control{{ $errors->has('best_traits') ? ' is-invalid' : '' }}" name="best_traits" value="{{ old('best_traits') }}" required autofocus>
+
+                                @if ($errors->has('best_traits'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('best_traits') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
